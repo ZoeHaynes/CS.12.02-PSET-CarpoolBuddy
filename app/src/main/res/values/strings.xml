@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CS.12.02-PSET-CarpoolBuddy</string>
+
+    <string-array name="user_types">
+        <item>Student</item>
+        <item>Teacher</item>
+        <item>Parent</item>
+        <item>Alumni</item>
+    </string-array>
+</resources>
