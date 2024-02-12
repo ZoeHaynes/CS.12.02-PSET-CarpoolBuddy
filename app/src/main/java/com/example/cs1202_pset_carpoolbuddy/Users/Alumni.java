@@ -7,4 +7,9 @@ public class Alumni extends User{
         super(uid, name, email, userType);
         this.graduateYear = graduateYear;
     }
+
+    public String getGraduateYear(){
+        return graduateYear;
+    }
+
 }

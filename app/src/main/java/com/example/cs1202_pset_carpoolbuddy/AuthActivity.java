@@ -8,29 +8,31 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class AuthActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private FirebaseFirestore firestore;
     private EditText emailAddressField;
     private EditText passwordField;
-
+    private TextView error;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authactivity);
         mAuth = FirebaseAuth.getInstance();
-        firestore = FirebaseFirestore.getInstance();
         emailAddressField = findViewById(R.id.editName);
         passwordField = findViewById(R.id.editEmail);
+        error = findViewById(R.id.errorMsg);
+        error.setVisibility(View.GONE);
 
     }
     @Override
@@ -58,9 +60,18 @@ public class AuthActivity extends AppCompatActivity {
                 //If sign in fails, display a message
                 else{
                     Log.w("SIGN IN", "signInWithEmail:failure", task.getException());
-                    updateUI(null);
+                    if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                        // Handle FirebaseAuthInvalidCredentialsException
+                        error.setText("Invalid email or password.");
+                        error.setVisibility(View.VISIBLE);
+                    } else {
+                        // Handle other exceptions
+                        error.setText("Sign-in failed. Please try again.");
+                        error.setVisibility(View.VISIBLE);
+                    }
                 }
-            }
+
+                }
         });
 
     }
@@ -75,11 +86,7 @@ public class AuthActivity extends AppCompatActivity {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
         }
-
-    }
-
-
-    void uploadData(FirebaseUser mUser){
+        finish();
 
     }
 

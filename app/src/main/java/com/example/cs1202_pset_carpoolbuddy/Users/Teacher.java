@@ -7,4 +7,9 @@ public class Teacher extends User{
         super(uid, name, email, userType);
         this.inSchoolTitle = inSchoolTitle;
     }
+
+    public String getInSchoolTitle(){
+        return inSchoolTitle;
+    }
+
 }

@@ -30,7 +30,15 @@
         <activity
             android:name=".UserProfileActivity"
             android:exported="true" />
-
+        <activity
+            android:name=".AddChildActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddParentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ChangeProfileActivity"
+            android:exported="true" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

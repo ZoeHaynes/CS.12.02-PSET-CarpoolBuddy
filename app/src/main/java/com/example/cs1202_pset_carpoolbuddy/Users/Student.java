@@ -10,4 +10,11 @@ public class Student extends User{
         super(uid, name, email, userType);
         this.graduatingYear = graduatingYear;
     }
+
+    public String getGraduatingYear(){
+        return graduatingYear;
+    }
+    public ArrayList<String> getParentUIDs(){
+        return parentUIDs;
+    }
 }

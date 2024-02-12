@@ -9,7 +9,6 @@ public class User {
     private String userType;
     private double priceMultiplier;
     public ArrayList<String> ownedVehicles;
-
     public User(){
 
     }
@@ -34,6 +33,14 @@ public class User {
 
     public String getUserType(){
         return userType;
+    }
+
+    public double getPriceMultiplier(){
+        return priceMultiplier;
+    }
+
+    public ArrayList<String> getOwnedVehicles(){
+        return ownedVehicles;
     }
 
 }

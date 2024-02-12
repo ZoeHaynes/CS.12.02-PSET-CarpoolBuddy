@@ -100,7 +100,6 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Handle the case when no item is selected
             }
         });
 
@@ -115,7 +114,7 @@ public class SignUpActivity extends AppCompatActivity {
         String passwordString = passwordField.getText().toString();
         String name = nameField.getText().toString();
         String last = lastField.getText().toString();
-        if(!TextUtils.isEmpty(emailString)&&!TextUtils.isEmpty(passwordString)&&!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(last)) {
+        if((!TextUtils.isEmpty(emailString)&&!TextUtils.isEmpty(passwordString)&&!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(last)) || (!TextUtils.isEmpty(emailString)&&!TextUtils.isEmpty(passwordString)&&!TextUtils.isEmpty(name)&& userType=="Parent")) {
             mAuth.createUserWithEmailAndPassword(emailString, passwordString).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -239,16 +238,12 @@ public class SignUpActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void updateUI(FirebaseUser user){
-        if(user != null) {
+    public void updateUI(FirebaseUser user) {
+        if (user != null) {
             Intent intent = new Intent(this, UserProfileActivity.class);
             startActivity(intent);
         }
 
     }
-
-
-
-
 
 }

@@ -9,4 +9,10 @@ public class Parent extends User{
         super(uid, name, email, userType);
 
     }
+
+    public ArrayList<String> getChildrenUIDs(){
+        return childrenUIDs;
+    }
+
+
 }
