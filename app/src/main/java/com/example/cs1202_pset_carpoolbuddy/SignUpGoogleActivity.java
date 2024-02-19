@@ -38,7 +38,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.UUID;
 
-
+/**
+ * This class runs the activity to create a new user through Sign up with Google,
+ * and authenticate the user.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class SignUpGoogleActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore firestore;

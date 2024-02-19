@@ -15,6 +15,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+/**
+ * This class runs the activity to show the current user's profile information.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class UserProfileActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;

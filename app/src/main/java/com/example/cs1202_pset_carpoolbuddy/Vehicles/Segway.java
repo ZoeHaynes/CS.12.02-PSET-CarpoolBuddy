@@ -1,5 +1,11 @@
 package com.example.cs1202_pset_carpoolbuddy.Vehicles;
 
+/**
+ * This class provides the properties, methods, and constructor for the Segway class, which extends the Vehicle class.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class Segway extends Vehicle{
     private int range;
     private int weightCapacity;
@@ -8,16 +14,20 @@ public class Segway extends Vehicle{
 
     }
 
-    public void setRange(int range){
-        this.range=range;
-    }
 
-    public void setWeightCapacity(int weightCapacity){
-        this.weightCapacity=weightCapacity;
-    }
+    /**
+     * Getter method for range
+     *
+     * @return int of the range.
+     */
     public int getRange(){
         return range;
     }
+    /**
+     * Getter method for weightCapacity
+     *
+     * @return int of the weightCapacity.
+     */
     public int getWeightCapacity(){
         return weightCapacity;
     }

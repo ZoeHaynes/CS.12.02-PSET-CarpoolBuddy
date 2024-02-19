@@ -14,12 +14,17 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * This class runs the activity to show a Vehicle object's information.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class VehicleProfileActivity extends AppCompatActivity {
     private String uid;
     private FirebaseFirestore firestore;

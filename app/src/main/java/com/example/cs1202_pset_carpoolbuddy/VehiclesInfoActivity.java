@@ -25,6 +25,12 @@ import org.w3c.dom.Document;
 
 import java.util.ArrayList;
 
+/**
+ * This class runs the activity to show all of the Vehicles in the database in a RecyclerView.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class VehiclesInfoActivity extends AppCompatActivity {
     private String owner;
     private String uid;

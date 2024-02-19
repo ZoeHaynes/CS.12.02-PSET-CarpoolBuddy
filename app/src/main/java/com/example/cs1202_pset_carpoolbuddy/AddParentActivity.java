@@ -15,6 +15,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
+/**
+ * This class runs the activity to add a parent to a child object.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class AddParentActivity extends AppCompatActivity {
     private EditText parentEmailField;
     private TextView parentList;

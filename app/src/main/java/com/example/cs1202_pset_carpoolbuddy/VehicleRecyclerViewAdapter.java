@@ -16,6 +16,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class creates the RecyclerView for the VehiclesInfoActivity class, which is used to display the
+ * vehicles in the Firestore database.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class VehicleRecyclerViewAdapter extends RecyclerView.Adapter<VehicleRecyclerViewAdapter.VehicleViewHolder> {
     private Context context;
     private List<Vehicle> vehiclesList;

@@ -41,6 +41,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.UUID;
 
+/**
+ * This class runs the activity to add a vehicle to the Firestore database.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class AddVehicleActivity extends AppCompatActivity {
     private FirebaseFirestore firestore;
     private static final int PICK_IMAGE_REQUEST = 1;

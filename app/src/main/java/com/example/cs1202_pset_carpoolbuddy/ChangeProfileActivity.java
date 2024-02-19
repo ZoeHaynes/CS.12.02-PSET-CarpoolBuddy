@@ -18,6 +18,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Objects;
 
+/**
+ * This class runs the activity to change the profile avatar of the current user.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class ChangeProfileActivity extends AppCompatActivity {
     private int step;
     private Button skinColorButton;

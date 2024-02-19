@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.cs1202_pset_carpoolbuddy.Users.User;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -17,6 +16,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.sql.Array;
 import java.util.ArrayList;
 
+/**
+ * This class runs the activity to add a child to a parent object.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class AddChildActivity extends AppCompatActivity {
     private EditText childEmailField;
     private TextView childrenList;

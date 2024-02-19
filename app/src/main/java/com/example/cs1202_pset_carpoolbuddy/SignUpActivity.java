@@ -40,6 +40,13 @@ import java.util.Objects;
 import java.util.UUID;
 
 
+/**
+ * This class runs the activity to create a new user through Sign up with email and password,
+ * and authenticate the user.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore firestore;

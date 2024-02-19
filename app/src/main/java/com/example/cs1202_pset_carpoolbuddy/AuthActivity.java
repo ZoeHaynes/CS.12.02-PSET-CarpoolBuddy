@@ -27,7 +27,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
-
+/**
+ * This class runs the activity to authenticate the user through Sign in, Sign up, or
+ * Sign in with Google.
+ *
+ * @author Zoe Haynes
+ * @version 0.1
+ */
 public class AuthActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText emailAddressField;
