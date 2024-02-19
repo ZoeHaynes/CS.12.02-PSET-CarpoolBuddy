@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +47,6 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText nameField;
     private EditText passwordField;
     private EditText lastField;
-    private TextView errorMsg;
     private String userType;
 
 
@@ -70,8 +70,6 @@ public class SignUpActivity extends AppCompatActivity {
         nameField = findViewById(R.id.editName);
         lastField = findViewById(R.id.editTexter);
         lastField.setVisibility(View.GONE);
-        errorMsg = findViewById(R.id.error);
-        errorMsg.setVisibility(View.GONE);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -108,13 +106,16 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void signUp(View v) {
         Log.d("SIGN UP", "Signing Up.");
-        errorMsg = findViewById(R.id.error);
         String uid = UUID.randomUUID().toString();
         String emailString = emailAddressField.getText().toString();
         String passwordString = passwordField.getText().toString();
         String name = nameField.getText().toString();
         String last = lastField.getText().toString();
-        if((!TextUtils.isEmpty(emailString)&&!TextUtils.isEmpty(passwordString)&&!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(last)) || (!TextUtils.isEmpty(emailString)&&!TextUtils.isEmpty(passwordString)&&!TextUtils.isEmpty(name)&& userType=="Parent")) {
+        if(!emailString.endsWith("cis.edu.hk")){
+            Toast.makeText(SignUpActivity.this, "Please make sure you have entered a CIS email address.",
+                    Toast.LENGTH_SHORT).show();
+        }
+        else if((!TextUtils.isEmpty(emailString)&&!TextUtils.isEmpty(passwordString)&&!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(last)) || (!TextUtils.isEmpty(emailString)&&!TextUtils.isEmpty(passwordString)&&!TextUtils.isEmpty(name)&& userType=="Parent")) {
             mAuth.createUserWithEmailAndPassword(emailString, passwordString).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -200,42 +201,49 @@ public class SignUpActivity extends AppCompatActivity {
                             throw task.getException();
                         } catch (FirebaseAuthWeakPasswordException e) {
                             // Handle weak password exception
-                            errorMsg.setText("Password is too weak. Please choose a stronger password.");
+                            Toast.makeText(SignUpActivity.this, "Password is too weak. Please choose a stronger password.",
+                                    Toast.LENGTH_SHORT).show();
                         } catch (FirebaseAuthInvalidCredentialsException e) {
                             // Handle invalid email exception
-                            errorMsg.setText("Invalid credentials. Please enter a valid email and password.");
+                            Toast.makeText(SignUpActivity.this, "Invalid credentials. Please enter a valid email and password.",
+                                    Toast.LENGTH_SHORT).show();
                         } catch (FirebaseAuthUserCollisionException e) {
                             // Handle user collision exception
-                            errorMsg.setText("Email address is already registered. Please use a different email.");
+                            Toast.makeText(SignUpActivity.this, "Email address is already registered. Please use a different email.",
+                                    Toast.LENGTH_SHORT).show();
                         } catch (FirebaseAuthEmailException e) {
                             // Handle email exception
-                            errorMsg.setText("Please provide a valid email address.");
+                            Toast.makeText(SignUpActivity.this, "Please provide a valid email address.",
+                                    Toast.LENGTH_SHORT).show();
                         } catch (FirebaseAuthActionCodeException e) {
                             // Handle action code exception
-                            errorMsg.setText("Invalid action code. Please try again.");
+                            Toast.makeText(SignUpActivity.this, "Invalid action code. Please try again.",
+                                    Toast.LENGTH_SHORT).show();
                         } catch (FirebaseAuthInvalidUserException e) {
                             // Handle invalid user exception
-                            errorMsg.setText("Invalid user. Please try again.");
+                            Toast.makeText(SignUpActivity.this, "Invalid user. Please try again.",
+                                    Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             // Handle other exceptions
-                            errorMsg.setText("An error occurred during sign up. Please try again.");
+                            Toast.makeText(SignUpActivity.this, "An error occurred during sign up. Please try again.",
+                                    Toast.LENGTH_SHORT).show();
                         }
 
-                        errorMsg.setVisibility(View.VISIBLE);
                         updateUI(null);
                     }
                 }
             });
         }
         else{
-            errorMsg.setText("Please make sure all fields are filled in.");
-            errorMsg.setVisibility(View.VISIBLE);
+            Toast.makeText(SignUpActivity.this, "Please make sure all fields are filled in.",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 
     public void goBack(View v){
         Intent intent = new Intent(this, AuthActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void updateUI(FirebaseUser user) {

@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/noto_sans_bold"
-        android:text="Welcome to Carpool Buddy"
+        android:text="Vehicle Profile"
         android:textAlignment="center"
         android:textColor="#910A40"
         android:textSize="20sp"
@@ -34,50 +34,69 @@
         app:layout_constraintVertical_bias="0.132" />
 
     <TextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:fontFamily="@font/noto_sans_bold"
-        android:text="Loading..."
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vehicleProfile" />
-
-    <TextView
         android:id="@+id/priceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Name: "
+        android:layout_marginTop="40dp"
+        android:text="Price: "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/vehicleImage" />
+
+    <TextView
+        android:id="@+id/modelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Model: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceText" />
 
     <TextView
         android:id="@+id/maxCapText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="User Type: "
+        android:layout_marginTop="9dp"
+        android:text="Max. Capacity: "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/modelText" />
+
+    <TextView
+        android:id="@+id/seatsLeftText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="Seats Left: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ownerText" />
+
+    <TextView
+        android:id="@+id/vehicleTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="Vehicle Type:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seatsLeftText" />
 
     <TextView
         android:id="@+id/ownerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:text="Loading..."
+        android:layout_marginTop="9dp"
+        android:text="Owner: "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/maxCapText" />
 
     <Button
         android:id="@+id/reserveSeat"
@@ -85,9 +104,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:backgroundTint="#910A40"
-        android:onClick="seeFamily"
-        android:text="See Family"
-        app:layout_constraintBottom_toTopOf="@+id/closeVehicle"
+        android:onClick="reserveSeat"
+        android:text="Reserve Seat"
+        app:layout_constraintBottom_toTopOf="@+id/backVP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -97,8 +116,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:backgroundTint="#910A40"
-        android:onClick="signOut"
-        android:text="Log Out"
+        android:onClick="goBackVP"
+        android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -110,34 +129,22 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:backgroundTint="#910A40"
-        android:onClick="seeVehicles"
-        android:text="See Vehicles"
+        android:onClick="closeVehicle"
+        android:text="Close Vehicle"
         app:layout_constraintBottom_toTopOf="@+id/backVP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/modelText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Email: "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
-
     <ImageView
         android:id="@+id/vehicleImage"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginBottom="12dp"
-        android:onClick="changeAvatar"
-        app:layout_constraintBottom_toTopOf="@+id/username"
+        android:layout_width="142dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="160dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/hair1_color1_skin1" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/no_image_available" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

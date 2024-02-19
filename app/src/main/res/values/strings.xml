@@ -7,4 +7,11 @@
         <item>Parent</item>
         <item>Alumni</item>
     </string-array>
+
+    <string-array name="vehicle_types">
+        <item>Bicycle</item>
+        <item>Car</item>
+        <item>Helicopter</item>
+        <item>Segway</item>
+    </string-array>
 </resources>

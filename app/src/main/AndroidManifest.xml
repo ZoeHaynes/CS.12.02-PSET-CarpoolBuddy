@@ -25,6 +25,9 @@
             android:name=".VehiclesInfoActivity"
             android:exported="true" />
         <activity
+            android:name=".AddVehicleActivity"
+            android:exported="true" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="true" />
         <activity
@@ -39,9 +42,21 @@
         <activity
             android:name=".ChangeProfileActivity"
             android:exported="true" />
+        <activity
+            android:name=".SignUpGoogleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".VehicleProfileActivity"
+            android:exported="true" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+
     </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
 
 </manifest>
