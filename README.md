@@ -7,4 +7,4 @@ The CIS community has been making a few strides towards reducing carbon emission
 5. There is no reward system to encourage students and parents to carpool to school.
 6. There is no way to book alternative transportation, like bicycles, helicopters, or segways. 
 
-This application offers a potential solution to these issues. It allows CIS community members to book Carpooling rides with other members of the community, start their own rides, and more!
+This application offers a potential solution to these issues. It allows CIS community members to book Carpooling rides with other members of the community, start their own rides, and more! 
